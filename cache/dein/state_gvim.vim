@@ -7,7 +7,7 @@ let g:dein#_base_path = 'C:/vim/cache/dein'
 let g:dein#_runtime_path = 'C:/vim/cache/dein/.cache/vimrc/.dein'
 let g:dein#_cache_path = 'C:/vim/cache/dein/.cache/vimrc'
 let &runtimepath = 'C:\Users\Kizashi/vimfiles,C:\vim/vimfiles,C:/vim/cache/dein/repos/github.com/Shougo/dein.vim,C:/vim/cache/dein/.cache/vimrc/.dein,C:\vim\vim81,C:/vim/cache/dein/.cache/vimrc/.dein/after,C:\vim/vimfiles/after,C:\Users\Kizashi/vimfiles/after,C:\vim\cache\dein\repos\github.com\Shougo\dein.vim'
-let g:lightline = { 'colorscheme': 'wombat', 'mode_map': {'c': 'NORMAL'}, 'active': {   'left': [ [ 'mode', 'paste' ], ['readonly', 'filename', 'modified', 'ale' ] ] }, 'component_function': {   'modified': 'LightlineModified',   'readonly': 'LightlineReadonly',   'fugitive': 'LightlineFugitive',   'filename': 'LightlineFilename',   'fileformat': 'LightlineFileformat',   'filetype': 'LightlineFiletype',   'fileencoding': 'LightlineFileencoding',   'mode': 'LightlineMode',   'ale': 'ALEGetStatusLine' } }
+let g:lightline = { 'colorscheme': 'wombat', 'mode_map': {'c': 'NORMAL'}, 'active': {   'left': [ [ 'mode', 'paste' ], ['readonly', 'filename'] ] }, 'component_function': {   'modified': 'LightlineModified',   'readonly': 'LightlineReadonly',   'fugitive': 'LightlineFugitive',   'filename': 'LightlineFilename',   'fileformat': 'LightlineFileformat',   'filetype': 'LightlineFiletype',   'fileencoding': 'LightlineFileencoding',   'mode': 'LightlineMode' } }
 function! LightlineModified()
   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction

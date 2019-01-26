@@ -2,7 +2,7 @@ let g:python3_host_prog = 'C:\Users\Kizashi\Anaconda3\python'
 let g:python_host_prog = 'C:\Users\Kizashi\Anaconda3\python'
 
 "encoding
-set encoding=cp932
+set encoding=utf-8
 scriptencoding utf-8 
 set fileencoding=utf-8 
 set fileencodings=utf-8
@@ -27,6 +27,7 @@ set cursorcolumn
 set wildmenu
 set nowrap
 set laststatus=2
+set backspace=indent,eol,start
 
 "dein Scripts-----------------------------
 if &compatible

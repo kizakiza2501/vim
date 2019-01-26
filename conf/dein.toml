@@ -45,7 +45,7 @@ let g:lightline = {
         \ 'colorscheme': 'wombat',
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], ['readonly', 'filename', 'modified', 'ale' ] ]
+        \   'left': [ [ 'mode', 'paste' ], ['readonly', 'filename'] ]
         \ },
         \ 'component_function': {
         \   'modified': 'LightlineModified',
@@ -55,8 +55,7 @@ let g:lightline = {
         \   'fileformat': 'LightlineFileformat',
         \   'filetype': 'LightlineFiletype',
         \   'fileencoding': 'LightlineFileencoding',
-        \   'mode': 'LightlineMode',
-        \   'ale': 'ALEGetStatusLine'
+        \   'mode': 'LightlineMode'
         \ }
         \ }
 
