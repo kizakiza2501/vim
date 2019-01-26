@@ -7,7 +7,7 @@ let g:dein#_base_path = 'C:/vim/cache/dein'
 let g:dein#_runtime_path = 'C:/vim/cache/dein/.cache/vimrc/.dein'
 let g:dein#_cache_path = 'C:/vim/cache/dein/.cache/vimrc'
 let &runtimepath = 'C:\Users\Kizashi/vimfiles,C:\vim/vimfiles,C:/vim/cache/dein/repos/github.com/Shougo/dein.vim,C:/vim/cache/dein/.cache/vimrc/.dein,C:\vim\vim81,C:/vim/cache/dein/.cache/vimrc/.dein/after,C:\vim/vimfiles/after,C:\Users\Kizashi/vimfiles/after,C:\vim\cache\dein\repos\github.com\Shougo\dein.vim'
-let g:lightline = { 'colorscheme': 'wombat', 'mode_map': {'c': 'NORMAL'}, 'active': {   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ] }, 'component_function': {   'modified': 'LightlineModified',   'readonly': 'LightlineReadonly',   'fugitive': 'LightlineFugitive',   'filename': 'LightlineFilename',   'fileformat': 'LightlineFileformat',   'filetype': 'LightlineFiletype',   'fileencoding': 'LightlineFileencoding',   'mode': 'LightlineMode' } }
+let g:lightline = { 'colorscheme': 'wombat', 'mode_map': {'c': 'NORMAL'}, 'active': {   'left': [ [ 'mode', 'paste' ], ['readonly', 'filename', 'modified', 'ale' ] ] }, 'component_function': {   'modified': 'LightlineModified',   'readonly': 'LightlineReadonly',   'fugitive': 'LightlineFugitive',   'filename': 'LightlineFilename',   'fileformat': 'LightlineFileformat',   'filetype': 'LightlineFiletype',   'fileencoding': 'LightlineFileencoding',   'mode': 'LightlineMode',   'ale': 'ALEGetStatusLine' } }
 function! LightlineModified()
   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
@@ -37,8 +37,16 @@ function! LightlineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 let g:ale_sign_column_always = 1
-let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
 let g:ale_linters = {'python': ['flake8'],}
 let g:ale_sign_error = '!!'
 let g:ale_sign_warning = '=='
+let g:ale_python_flake8_executable = g:python3_host_prog
+let g:ale_python_flake8_options = '-m flake8'
+let g:ale_python_autopep8_executable = g:python3_host_prog
+let g:ale_python_autopep8_options = '-m autopep8'
+let g:ale_python_isort_executable = g:python3_host_prog
+let g:ale_python_isort_options = '-m isort'
+let g:ale_python_black_executable = g:python3_host_prog
+let g:ale_python_black_options = '-m black'
